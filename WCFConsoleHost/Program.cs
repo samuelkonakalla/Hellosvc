@@ -11,10 +11,16 @@ namespace WCFConsoleHost
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(ClassLibrary1.HelloSVC)))
-            {
+            ServiceHost host = new ServiceHost(typeof(ClassLibrary1.HelloSVC));
+            
                 host.Open();
-                Console.WriteLine("Host started at:"+DateTime.Now.ToShortTimeString());
+                Console.WriteLine("HelloSVC service Host started at:" + DateTime.Now.ToShortTimeString());
+                
+            
+            using (ServiceHost host1 = new ServiceHost(typeof(ClassLibrary1.HelloSVCpubPrivate)))
+            {
+                host1.Open();
+                Console.WriteLine("HelloSVCpubPrivate service Host started at:" + DateTime.Now.ToShortTimeString());
                 Console.ReadLine();
             }
         }

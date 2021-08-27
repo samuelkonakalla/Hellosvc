@@ -14,4 +14,16 @@ namespace ClassLibrary1
         [OperationContract]
         string DoWork();
     }
+    [ServiceContract]
+    public interface IHellopublicSVC
+    {
+        [OperationContract]
+        string publicsvc(string name);
+    }
+    [ServiceContract]
+    public interface IHelloPrivateSVC
+    {
+        [OperationContract]
+        string privatesvc(string name);
+    }
 }
