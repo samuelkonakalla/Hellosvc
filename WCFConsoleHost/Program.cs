@@ -15,14 +15,18 @@ namespace WCFConsoleHost
             
                 host.Open();
                 Console.WriteLine("HelloSVC service Host started at:" + DateTime.Now.ToShortTimeString());
-                
-            
+
+            ServiceHost hostemp = new ServiceHost(typeof(ClassLibrary1.EmployeeService));
+            hostemp.Open();
+            Console.WriteLine("HelloSVC service Host started at:" + DateTime.Now.ToShortTimeString());
+
             using (ServiceHost host1 = new ServiceHost(typeof(ClassLibrary1.HelloSVCpubPrivate)))
             {
                 host1.Open();
                 Console.WriteLine("HelloSVCpubPrivate service Host started at:" + DateTime.Now.ToShortTimeString());
                 Console.ReadLine();
             }
+
         }
 
     }

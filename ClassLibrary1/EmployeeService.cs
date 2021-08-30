@@ -39,7 +39,7 @@ namespace ClassLibrary1
             string con = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection scon = new SqlConnection(con))
             {
-                SqlCommand cmd = new SqlCommand("spGetEmployee", scon);
+                SqlCommand cmd = new SqlCommand("spSaveEmployee", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", emp.Id);
                 cmd.Parameters.AddWithValue("@Name", emp.Name);

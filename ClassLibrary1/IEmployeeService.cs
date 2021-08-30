@@ -13,7 +13,7 @@ namespace ClassLibrary1
     {
         [OperationContract]
         Employee GetEmployee(int id);
-
+        [OperationContract]
         void SaveEmployee(Employee emp);
     }
 }
